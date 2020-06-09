@@ -1,0 +1,21 @@
+<h1> Sign Up Form </h1>
+
+<form method="POST" action="/users/register/client">
+    <input type="text" name="username" placeholder="username">
+    <input type="text" name = "email" placeholder="email">
+    <input type="text" name= "number" placeholder="phone number">
+    <input type="password" name="password" placeholder="password">
+    <input type="password" name="confirmPassword" placeholder="Confirm Password">
+    <select type="text" class="select_" placeholder="Buiseness Name" onchange="changedroptype(this)" onblur="validate()" name="businessType" id="businessType"></h3>
+        <option value="0" selected>Business Type *</option>
+        <option value="Software">Software</option>
+        <option value="Hardware">Hardware</option>
+        <option value="others">Activity/others</option>
+
+    </select>
+    <button> Submit </button>
+</form>
+
+<li><a href="/users/register">Sign Up</a></li>
+<li><a href="/users/logout">Logout!</a></li>
+<li><a href="/users/login">Login!</a></li>

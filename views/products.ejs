@@ -1,0 +1,220 @@
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+                <script src="/javascripts/all.js"></script>
+                
+        
+                
+        <style>
+            
+
+            .card {
+                font-family: 'Nunito', sans-serif;
+                width: 250px;
+                margin: 15px;
+                box-shadow: 2px 2px 7px rgb(0, 0, 0);
+                border-radius: 15px;
+                background: #ffffff;
+            }
+            .card-header img {
+                border-radius: 10px;
+                width: 100%;
+                height: 170px;
+            }
+
+            .card-header {
+                border-radius: 10px !important;
+                border: 0px;
+                padding: 0px;
+                color: black;
+                overflow: hidden;
+                position: relative;
+                background: #ffffff;
+            }
+
+            .card .wishlist .colorred {
+                color: red;
+                font-size: 1.3rem;
+            }
+            .card .wishlist .i {
+                color: #888888;
+                cursor: pointer;
+                margin-top: 30%;
+                font-size: 1.1rem;
+                transition: all 0.4s;
+            }
+            .card .wishlist {
+                position: absolute;
+                margin: 7px;
+                width: 40px;
+                height: 40px;
+                display: block;
+                border-radius: 50%;
+                box-shadow: 2px 2px 2px rgb(200, 200, 200);
+                background-color: white;
+            }
+            #heart {
+                color: grey;
+                font-size: 50px;
+            }
+
+            #heart.red {
+                color: red;
+            }
+            @keyframes blink {
+            0% {
+                box-shadow: 0 0 20px red;
+            }
+
+            50% {
+                box-shadow: 0 0 0;
+            }
+
+            100% {
+                box-shadow: 0 0 20px red;
+            }
+        }
+
+        @-webkit-keyframes blink {
+            0% {
+                box-shadow: 0 0 20px red;
+            }
+
+            50% {
+                box-shadow: 0 0 0;
+            }
+
+            100% {
+                box-shadow: 0 0 20px red;
+            }
+        }
+
+        .flash,.flash2{
+    background-color: rgb(236, 0, 0);
+    border-radius: 5px;
+    padding: 20px 30px;
+    left: 30%;
+    right: 30%;
+    position: fixed;
+    top: 3px;
+    z-index: 15;
+    font-size: 1.3rem;
+    color: white;
+}
+.flash .close1,.flash2 .close1{
+    float: right;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.innerflash{
+    display: flex;
+    align-items: center;
+}
+.flash .i,.flash2 .i{
+    font-size: 2rem;
+    color: white;
+    float: left;
+    margin-right: 20px;
+}
+.flash2{
+    background-color: rgb(0, 172, 0);
+}
+@media screen and (max-width: 900px){
+    .flash,.flash2{
+        font-size: 0.9rem;
+        padding: 12px 25px;
+        margin: 3px;
+        left: 0;
+        right: 0;
+    }
+    .flash .i,.flash2 .i{
+        font-size: 1.5rem;
+    }
+}
+
+        </style>
+    </head>
+    <body>
+            <% if(success &&success.length){%>
+
+                <div class="flash2">
+                            
+                            <div class="innerflash">
+                                <i class="fas fa-check-double i"></i>
+                                <%=success%>
+                            </div>
+                    </div>
+                <% }%> 
+                <% if(error && error.length){%>
+                <div class="flash blink">
+                            
+                            <div class="innerflash">
+                                <i class="fas fa-times i"></i>
+                              <%=error%>
+                            </div>
+                    </div>
+                <% }%>
+            <div class="container">
+                <h1>Products</h1>
+                    <div class="row">
+                            <% if(noMatch != null){ %>
+                                <h3><%=noMatch%></h3>
+                            <% } %>
+                        <% products.forEach(prod =>{%>
+                            <div class="card" style="width: 18rem;">
+                                
+                                <div class="card-header text-center ">
+                                        <% if(currentUser.typeAccess == 'user') { %>
+                                        <p class="wishlist">
+                                        <a href="/wish-list/add-to-wishList/<%=prod._id%>">
+                                            <i class="fas fa-heart i"></i>
+                                        </a>
+                                        </p>
+                                        <% } %>
+                                        
+                                       
+                                            <img src="/products/image/<%= prod.pimg.fileName %>" alt="Product Image Not Availale" class="w-100">    
+                                     
+                                        
+                                    </div>
+                                <div class="card-body">
+                                  <h5 class="card-title"><%=prod.name%></h5>
+                                  <p class="card-text">₹&nbsp;<%=prod.price%></p>
+                                  <p class="card-text"><%=prod.technologies%></p>
+                                  <p class="card-text">Offered by:<%=prod.author.username%></p>
+                                </div>
+                              </div>
+                              <%})%>
+                    </div>
+                    <div class="row">
+                           
+                        <% if(currentUser.typeAccess == 'client') { %>
+                        <div class="col-md-6">
+                            <a href="/client/showDashboard" class="btn btn-primary">Home Page</a>
+                        </div>
+                        <% } %>
+                        <% if(currentUser.typeAccess == 'user') { %>
+                        <div class="col-md-6">
+                            <a href="/" class="btn btn-primary">Home Page</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="/wish-list/" class="btn btn-primary">Wish List</a>
+                        </div>
+                        <% } %>
+                    </div> 
+            </div>
+
+                <script src="/javascripts/jquery-3.4.1.min.js"></script>
+    <script src="/javascripts/custom.js"></script>
+                
+                
+                
+                
+    </body>
+</html>

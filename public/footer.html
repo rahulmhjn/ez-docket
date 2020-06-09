@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+
+	<!--UPDATE CSS-->
+	<style>
+* {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  overflow: hidden;
+  background-color: transparent;
+  padding: 20px 10px;
+ }
+#header
+{
+  
+  position: fixed;
+  
+  display: block;
+  transition: top 1.3s;
+
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: dodgerblue;
+  color: black;
+
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 950px) {
+  .header a {
+    float: none;
+    display:inline-block;
+    text-align: left;
+    background: transparent;
+    color:white;
+    max-width: 95%;
+}
+
+   
+  
+  .header-right {
+    float: none;
+  }
+}
+
+
+@media screen and (min-width: 950px) {
+  #my-content{ display: block; }   /* hide it small screens */
+
+}
+
+</style>
+<style>
+.dropbtn {
+
+color:white;
+padding:12px;
+font-size: 16px;
+border: none;
+}
+.dropdown {
+position:relative;
+display: inline-block;
+
+}
+.dropdown-content{
+display: none;
+position: absolute;
+background-color: #f1f1f1;
+
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+.dropdown-content a{
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+.dropdown-content a: hover {background-color: #ddd;}
+.dropdown: hover .dropdown-content{dsiplay: block;}
+.dropdown: hover .dropbtn { background-color: #3e8e41;}
+
+</style>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+
+
+.search2 {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm2 {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+  min-height:60px;
+}
+
+.searchTerm2:focus{
+  color: #00B4CC;
+}
+
+.searchButton2 {
+ 
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+  max-height:60px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap2{
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+</style>
+	<!--UPDATE CSS-->
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+	
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+   <!-- Mobile Specific Metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/layout.css">
+   <link rel="stylesheet" href="css/media-queries.css">
+   <link rel="stylesheet" href="css/magnific-popup.css">
+
+   <!-- Script
+   ================================================== -->
+	<script src="js/modernizr.js"></script>
+
+   <!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/cropped-logo-01-regular-free-img-192x192.png">
+</head>
+
+<body style="background:white;">
+
+   <!-- #161415 images/header-background.jpg Header
+   ================================================== -->
+
+ 
+<!-- Header End -->
+
+
+   <!-- About Section
+   ================================================== -->
+   <section id="about" style="background: #f1eded;" >
+
+      <div class="row">
+
+         <!--div class="three columns">
+
+            <img class="profile-pic"  src="images/ez-logo.png" alt="EZ-Docket" />
+
+         </div-->
+
+         <div class="nine columns main-col">
+            <!-- <%if(!currentUser){%> -->
+            <h2>About EZ-Docket</h2>
+
+
+            <p font-color="blue">EZ-Docket is a product developed by Ezmata Technologies.       
+            </p>
+            
+         
+         </div> <!-- end .main-col -->
+
+      </div>
+
+   </section> <!-- About Section End-->
+
+ 
+   <footer>
+
+      <div class="row">
+
+      
+
+         <div class="twelve columns">
+
+            <ul class="social-links">
+                <li><a href="https://www.linkedin.com/in/" target="_blank"><i class="fa fa-linkedin" style="color: #655656 !important;"></i></a></li>
+               <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" style="color: #655656 !important;"></i></a></li>
+               <li><a href="https://www.instagram.com//" target="_blank"><i class="fa fa-instagram" style="color: #655656 !important;"></i></a></li>
+              
+            </ul>
+
+         </div>
+
+         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
+
+
+      </div>
+      <div style="width:100%; padding-top:30px;">
+
+            
+      		<div class="six columns" style="float:right;">
+            	 
+            		<table border="0">
+            			<tr>
+            				<td align="left" ><b>Mobile:</b></td>
+            				<td>&nbsp;+91  787 509 0005&nbsp;&nbsp;&nbsp;</td>
+            				</tr>
+            			<tr>
+            				<td align="left"><b>Email:</b></td>
+            				<td><a href="mailto:justask@ezmata.com">&nbsp;justask@ezmata.com</a></td>
+            			</tr>
+            			
+            		</table>
+            	 
+
+            
+
+            </div>
+
+            <div class="six columns" style="float:left;">
+            	 
+                     <table border="0">
+            			<tr>
+            				
+            				<td><br></td>
+            			</tr>	
+            			<tr>
+            				
+            				<td><b>&#169;2020</b> Ezmata Techonologies Pvt. Ltd. All Right Reserved.</td>
+            			</tr>
+            		
+            		</table>
+                   
+                     
+                  
+
+                
+            
+
+            </div>
+            
+
+             
+
+      	</div>
+
+   </footer> <!-- Footer End-->
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+
+   <script src="js/jquery.flexslider.js"></script>
+   <script src="js/waypoints.js"></script>
+   <script src="js/jquery.fittext.js"></script>
+   <script src="js/magnific-popup.js"></script>
+   <script src="js/init.js"></script>
+
+</body>
+
+<script>
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("header").style.top = "0px";
+  } else {
+    document.getElementById("header").style.top = "-170px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+</script>
+
+</html>
+

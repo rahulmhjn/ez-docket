@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Ez-Docket</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+   <!-- Mobile Specific Metas
+   ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/default.css">
+	<link rel="stylesheet" href="/css/layout.css">
+   <link rel="stylesheet" href="/css/media-queries.css">
+   <link rel="stylesheet" href="/css/magnific-popup.css">
+
+   <style>
+	   .flash,.flash2{
+    background-color: rgb(236, 0, 0);
+    border-radius: 5px;
+    padding: 20px 30px;
+    left: 30%;
+    right: 30%;
+    position: fixed;
+    top: 3px;
+    z-index: 15;
+    font-size: 1.3rem;
+    color: white;
+}
+.flash .close1,.flash2 .close1{
+    float: right;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.innerflash{
+    display: flex;
+    align-items: center;
+}
+.flash .i,.flash2 .i{
+    font-size: 2rem;
+    color: white;
+    float: left;
+    margin-right: 20px;
+}
+.flash2{
+    background-color: rgb(0, 172, 0);
+}
+@media screen and (max-width: 900px){
+    .flash,.flash2{
+        font-size: 0.9rem;
+        padding: 12px 25px;
+        margin: 3px;
+        left: 0;
+        right: 0;
+    }
+    .flash .i,.flash2 .i{
+        font-size: 1.5rem;
+    }
+}
+   </style>
+
+   
+
+   <!-- Script
+   ================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="/images/ez-logo.png">
+</head>
+
+<body>
+
+   <!-- Header
+   ================================================== -->
+ 
+      <nav id="nav-wrap">
+
+         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+
+         <ul id="nav" class="nav">
+				<li><img src="/images/ez-docket.png" alt="EZ-Docket"  width="180" height="190"></li>
+            <li ><a class="smoothscroll" href="/">Home</a></li>
+            <li><a class="smoothscroll" href="#about">About</a></li>
+           <li><a class="smoothscroll" href="#resume">More</a></li>
+           <li><a  href="https://blog.ezmata.com/" target="_blank">Blog</a></li>
+           <%if(!currentUser){%>
+           <li class="current"><a  href="/users/login">Login</a></li>
+          <!--  <li><a class="smoothscroll" href="#portfolio">Works</a></li> -->
+            <li><a class="smoothscroll" href="#contact">Contact</a></li>
+            <%}%>
+         </ul> <!-- end #nav -->
+
+	  </nav> <!-- end #nav-wrap -->
+	  <% if(success &&success.length){%>
+
+		<div class="flash2">
+					
+					<div class="innerflash">
+						<i class="fas fa-check-double i"></i>
+						<%=success%>
+					</div>
+			</div>
+		<% }%> 
+		<% if(error && error.length){%>
+		<div class="flash blink">
+					
+					<div class="innerflash">
+						<i class="fas fa-times i"></i>
+					  <%=error%>
+					</div>
+			</div>
+		<% }%>
+		
+<head>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/login/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/login/fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/login/vendor/animate/animate.css">
+    <!--===============================================================================================-->	
+        <link rel="stylesheet" type="text/css" href="/login/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/login/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/login/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->	
+        <link rel="stylesheet" type="text/css" href="/login/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="/login/css/util.css">
+        <link rel="stylesheet" type="text/css" href="/login/css/main.css">
+</head>
+
+
+<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" method="POST" action="/users/login">
+					<span class="login100-form-title p-b-26">
+						Welcome
+					</span>
+					<span class="login100-form-title p-b-48">
+						<img src = "/images/ez-docket.png">
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
+						<input class="input100" type="text" name="email">
+						<span class="focus-input100" data-placeholder="Email"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+						<input class="input100" type="password" name="password">
+						<span class="focus-input100" data-placeholder="Password"></span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn">
+								Login
+							</button>
+						</div>
+					</div>
+
+					<div class="text-center p-t-115">
+						<span class="txt1">
+							Don’t have an account?
+						</span>
+
+						<a class="txt2" href="/users/register">
+							Sign Up
+						</a>
+						
+					</div>
+					<div class="text-center ">
+							<a class="txt2" href="/users/auth/facebook">
+								Login with Facebook
+							</a>
+					</div>
+					<div class="text-center ">
+							<a class="txt2" href="/users/register/client">
+								Sign Up as Client
+							</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="/login/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/login/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/login/vendor/bootstrap/js/popper.js"></script>
+	<script src="/login/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/login/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/login/vendor/daterangepicker/moment.min.js"></script>
+	<script src="/login/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="/login/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="/login/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+
+	<!--UPDATE CSS-->
+	<style>
+* {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  overflow: hidden;
+  background-color: transparent;
+  padding: 20px 10px;
+   
+ 
+  
+}
+#header
+{
+  
+  position: fixed;
+  
+  display: block;
+  transition: top 1.3s;
+
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: dodgerblue;
+  color: black;
+
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 950px) {
+  .header a {
+    float: none;
+    display:inline-block;
+    text-align: left;
+    background: transparent;
+    color:white;
+    max-width: 95%;
+
+    
+
+
+  }
+
+   
+  
+  .header-right {
+    float: none;
+  }
+}
+
+
+@media screen and (min-width: 950px) {
+  #my-content{ display: block; }   /* hide it small screens */
+
+}
+
+</style>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+
+
+.search2 {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm2 {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+  min-height:60px;
+}
+
+.searchTerm2:focus{
+  color: #00B4CC;
+}
+
+.searchButton2 {
+ 
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+  max-height:60px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap2{
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.flash,.flash2{
+    background-color: rgb(236, 0, 0);
+    border-radius: 5px;
+    padding: 20px 30px;
+    left: 30%;
+    right: 30%;
+    position: fixed;
+    top: 3px;
+    z-index: 15;
+    font-size: 1.3rem;
+    color: white;
+}
+.flash .close1,.flash2 .close1{
+    float: right;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.innerflash{
+    display: flex;
+    align-items: center;
+}
+.flash .i,.flash2 .i{
+    font-size: 2rem;
+    color: white;
+    float: left;
+    margin-right: 20px;
+}
+.flash2{
+    background-color: rgb(0, 172, 0);
+}
+@media screen and (max-width: 900px){
+    .flash,.flash2{
+        font-size: 0.9rem;
+        padding: 12px 25px;
+        margin: 3px;
+        left: 0;
+        right: 0;
+    }
+    .flash .i,.flash2 .i{
+        font-size: 1.5rem;
+    }
+}
+
+</style>
+	<!--UPDATE CSS-->
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>EZ-Docket</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+   <!-- Mobile Specific Metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/default.css">
+	<link rel="stylesheet" href="/css/layout.css">
+   <link rel="stylesheet" href="/css/media-queries.css">
+   <link rel="stylesheet" href="/css/magnific-popup.css">
+
+   <!-- Script
+   ================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="/images/ez-logo.png">
+</head>
+
+<body style="background:white;">
+
+   <!-- #161415 images/header-background.jpg Header
+   ================================================== -->
+
+ 
+
+   <header id="home" style="height: 727px;background: url(&quot;../images/back.svg&quot;) no-repeat fixed center;">   
+ 
+   
+<div class="header" id="header"  style="width:100%; position: fixed; top:0; ">
+  <a href="/" style="padding:0px;" >
+  	<img src="/images/ez-docket.png" style="max-width: 320px; "></a>
+  <div class="header-right" >
+    <a class="active" href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">More</a>
+    <a href="https://blog.ezmata.com/" target="_blank">Blog</a>
+    
+    <%if(!currentUser){%>
+      <a  href="/users/login">Login</a>
+      <a href="#about">Contact</a>
+       <%}else{%>
+      <a href="/products/add">Add Product</a>
+      <a  href="/users/logout">Logout</a>
+      <%}%>
+    
+  </div>
+</div>
+
+      
+<!--
+
+   		   
+      <nav id="nav-wrap">
+
+
+
+         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+
+         <ul id="nav" class="nav">
+            <li style="
+    /* min-width: 0%; */
+    width: 40%;
+">
+           
+   <a href="index.html">
+            <img src="images/ez-docket.png" alt="EZ-Docket" style="
+			    
+			    height: 50px;
+			    padding-top: 10px;
+			    width: 300px;
+			    
+			  
+			   
+			    min-width: 170px;
+			
+
+			">
+		</a>
+
+            </li>
+
+            <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
+            <li><a class="smoothscroll" href="#about">About</a></li>
+           <li><a class="smoothscroll" href="#resume">More</a></li>
+           <li><a  href="https://blog.ezmata.com/" target="_blank">Blog</a></li>
+
+           
+          
+           
+             <li><a class="smoothscroll" href="#contact">Contact</a></li>
+            
+               <li><a href="/products/add">Add Product</a></li>
+              <li><a  href="/users/logout">Logout</a></li>
+
+         </ul> 
+     -->
+        
+     <div class="wrap2">
+       <h1 style="color: #fbf2f2;">Welcome To EZ-Docket</h1>
+       <form action="/products" method="GET">
+   <div class="search2">
+      <input type="text" class="searchTerm2" name="search" placeholder="What are you looking for?">
+      <button type="submit" class="searchButton2">
+        <i class="fa fa-search"></i>
+     </button>
+   </div>
+  </form>
+</div>
+
+<!--
+      <div class="wrap" >
+        <h1 style="color: #fbf2f2;">Welcome To EZ-Docket</h1>
+        <form action="/products" method="GET">
+         <div class="search">
+            <input type="text" class="searchTerm" name="search" placeholder="What are you looking for?">
+            <button type="submit" class="searchButton">
+            
+            <i class="fa fa-search"></i>
+
+           </button>
+         </div>
+        </form>
+        
+     </div>-->
+
+      <p class="scrolldown">
+         <a class="smoothscroll" href="#about"><i class="icon-down-circle" style="color:#5828e4;"></i></a>
+      </p>
+
+   </header> <!-- Header End -->
+
+   <% if(success &&success.length){%>
+
+    <div class="flash2">
+                
+                <div class="innerflash">
+                    <i class="fas fa-check-double i"></i>
+                    <%=success%>
+                </div>
+        </div>
+    <% }%> 
+    <% if(error && error.length){%>
+    <div class="flash blink">
+                
+                <div class="innerflash">
+                    <i class="fas fa-times i"></i>
+                  <%=error%>
+                </div>
+        </div>
+    <% }%>
+
+
+   <!-- About Section
+   ================================================== -->
+   <section id="about" style="background: #f1eded;">
+
+      <div class="row">
+
+         <!--div class="three columns">
+
+            <img class="profile-pic"  src="images/ez-logo.png" alt="EZ-Docket" />
+
+         </div-->
+
+         <div class="nine columns main-col">
+            <%if(!currentUser){%>
+            <h2>About EZ-Docket</h2>
+
+
+            <p >EZ-Docket is a product developed by Ezmata Technologies.       
+            </p>
+            <%}else{%>
+                <h2>Client Account</h2>
+              <h2 ><%=currentUser.username%></h2>
+              <p><%=currentUser.email%></p>
+              <p><%=currentUser.number%></p>
+              <p><%=currentUser.businessType%></p>
+            <%}%>
+            <!--
+            <div class="row">
+
+               <div class="columns download">
+                  <p>
+                     <a href="" class="button"><i class="fa fa-download"></i>Download Docs</a>
+                  </p>
+               </div>
+
+            </div> <!-- end row -->
+         
+         </div> <!-- end .main-col -->
+
+      </div>
+
+   </section> <!-- About Section End-->
+
+   
+
+   <!-- Contact Section
+   ================================================== -->
+  
+<!--
+   <section id="contact">
+
+         <div class="row">
+
+            <div class="eight columns">
+            </div>
+
+              <p class="address">
+                     <h4>Mobile</h4>
+                     +91  787 509 0005
+                  </p>
+
+                  <p class="address">
+                     <h4>E-mail</h4>
+                     <a href="mailto:justask@ezmata.com">justask@ezmata.com</a>
+                  </p>
+
+      </div>
+
+   </section> -->
+
+   <!-- footer
+   ================================================== -->
+   <footer>
+
+      <div class="row">
+
+      
+
+         <div class="twelve columns">
+
+            <ul class="social-links">
+                <li><a href="https://www.linkedin.com/company/ezmata-technologies-pvt-ltd/" target="_blank"><i class="fa fa-linkedin" style="color: #655656 !important;"></i></a></li>
+               <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" style="color: #655656 !important;"></i></a></li>
+               <li><a href="https://www.instagram.com/ezmata_technologies/" target="_blank"><i class="fa fa-instagram" style="color: #655656 !important;"></i></a></li>
+              
+            </ul>
+
+         </div>
+
+         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
+
+
+      </div>
+      <div style="width:100%; padding-top:30px;">
+
+            
+      		<div class="six columns" style="float:right;">
+            	 
+            		<table border="0">
+            			<tr>
+            				<td align="left" ><b>Mobile:</b></td>
+            				<td>&nbsp;+91  787 509 0005&nbsp;&nbsp;&nbsp;</td>
+            				</tr>
+            			<tr>
+            				<td align="left"><b>Email:</b></td>
+            				<td><a href="mailto:justask@ezmata.com">&nbsp;justask@ezmata.com</a></td>
+            			</tr>
+            			
+            		</table>
+            	 
+
+            
+
+            </div>
+
+            <div class="six columns" style="float:left;">
+            	 
+                     <table border="0">
+            			<tr>
+            				
+            				<td><br></td>
+            			</tr>	
+            			<tr>
+            				
+            				<td><b>&#169;2020</b> Ezmata Techonologies Pvt. Ltd. All Right Reserved.</td>
+            			</tr>
+            		
+            		</table>
+                   
+                     
+                  
+
+                
+            
+
+            </div>
+            
+
+             
+
+      	</div>
+
+   </footer> <!-- Footer End-->
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="/js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+
+   <script src="/js/jquery.flexslider.js"></script>
+   <script src="/js/waypoints.js"></script>
+   <script src="/js/jquery.fittext.js"></script>
+   <script src="/js/magnific-popup.js"></script>
+   <script src="/js/init.js"></script>
+
+</body>
+
+<script>
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("header").style.top = "0px";
+  } else {
+    document.getElementById("header").style.top = "-170px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+</script>
+
+<script src="/javascripts/jquery-3.4.1.min.js"></script>
+<script src="/javascripts/custom.js"></script>
+
+
+</html>
+

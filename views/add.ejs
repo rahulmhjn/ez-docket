@@ -1,0 +1,16 @@
+<h1> Add a Product </h1>
+
+<%errors.forEach(error=>{%>
+    <p><%=error.text%></p>
+<%})%>
+<form method="POST" action="/products/add" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="productname" value="<%=name%>">
+    <input type="text" name = "technologies" placeholder="technologies" value="<%=technologies%>">
+    <input type="number" name= "price" placeholder="price" value="<%=price%>">
+    <label for="exampleFormControlFile1">Upload your Product's Image</label>
+    <input name="file" type="file" class="form-control-file" id="exampleFormControlFile1" required>
+    <button> Submit </button>
+</form>
+
+
+<li><a href="/users/logout">Logout!</a></li>
